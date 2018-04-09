@@ -1,0 +1,21 @@
+void cambio1(char *a,int x,int y)
+{
+    char aux=a[x];
+    a[x]=a[y];
+    a[y]=aux;
+}
+void cambio2(char *v,int y,int x)
+{
+    char p[2]={v[y],v[x]};
+    char *almacenar=p;
+    v[x]=*almacenar;
+    almacenar++;
+    v[y]=*almacenar;
+}
+int main()
+{
+    char ar[]={'h','o','l','a','\0'};
+    char *arreglo=ar;
+    cambio1(arreglo,1,3);
+    cout<<ar<<endl
+}
