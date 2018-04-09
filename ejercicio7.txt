@@ -1,0 +1,42 @@
+void cadena2(char *a, char *b)
+{
+    while(*b)
+    {
+       b++;
+    }
+    while(*a)
+    {
+       *b=*a;
+        a++;
+        b++;
+    }
+    *b='\0';
+}
+void cadena3(char a[100],char b[100])
+{
+    int con=0,cont=0;
+    while (b[cont]!='\0')
+    {
+        cont++;
+    }
+    while(a[con]!='\0')
+    {
+        b[cont]=a[con];
+        con++;
+        cont++;
+    }
+    b[cont]='\0';
+}
+int main()
+{ 
+    char t[]="german";
+    char s[]="garcia33";
+    char tt[]="jamon";
+    char ss[]="passn";
+    cadena1(s,t);
+    cout<<s<<endl;
+    cadena2(t,s);
+    cout<<s<<endl;
+    cadena3(tt,ss);
+    cout<<ss<<endl;
+}
