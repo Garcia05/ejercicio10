@@ -1,0 +1,40 @@
+void MostrarMat (int L[][20],int a, int b)
+{
+    for (int i=0;i<a;i++)
+    {
+        for (int j=0;j<b;j++)
+            cout<<L[i][j]<<" ";
+        cout<<endl;
+    }
+}
+void Multi1(int M[][10],int fm,int cm,int N[][10],int fn,int cn,int L[][20])
+{
+
+    for (int i=0;i<fm;i++)
+        for (int j=0;j<cn;j++)
+            L[i][j]=0;
+    if(cm=fn){
+        for (int i=0;i<fm;i++)
+            for (int j=0;j<cn;j++)
+                for (int k=0;k<cm;k++){
+                    L[i][j]=(M[i][k]*N[k][j])+L[i][j];}
+    }
+    else
+        cout<<"no se puede multiplicar"<<endl;
+}
+int main()
+{
+    int M[10][10]={{2,3},{5,4}};
+    int fm=2,cm=2;
+    int N[10][10]={{2,0,3},{(-1),1,5}};
+    int fn=2,cn=3;
+    int MM[10][10]={{1,2,(-3)},{4,0,(-2)}};
+    int fmm=2,cmm=3;
+    int NN[10][10]={{3,1},{2,4},{(-1),5}};
+    int fnn=3,cnn=2;
+    int L[20][20];
+    Multi1(M,fm,cm,N,fn,cn,L);
+    MostrarMat(L,fm,cn);
+    Multi1(MM,fmm,cmm,NN,fnn,cnn,L);
+    MosMat(L,fm,cn);
+}
